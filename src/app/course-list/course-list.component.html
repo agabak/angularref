@@ -1,0 +1,9 @@
+<div class="container">
+  <app-favorite [isFavorite] = "post.isFavorite"  (change)="onFavoriteChange($event)"></app-favorite>
+  <app-mapping></app-mapping>
+  <p>{{title | summary:100}}</p>
+  <h1 [hidden]="Courses.length === 0">Course List</h1>
+<p *ngFor="let course of Courses; index as i">{{course.name}} - {{i}}</p>
+<h1 [hidden]="Courses.length !== 0">No Courses Listed</h1>
+</div>
+<input type="text"  [appLogging]= "3" >
